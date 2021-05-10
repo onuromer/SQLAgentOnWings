@@ -1,0 +1,20 @@
+﻿@page "/Jobs/{JobId}"
+@inject NavigationManager NavMan
+
+
+<h3>Job Details for JobId: @JobId</h3>
+<button class="btn btn-primary" @onclick="Navigate">
+    Back
+</button>
+
+
+@code {
+    [Parameter]
+    public string JobId { get; set; }
+
+    private void Navigate()
+    {
+        NavMan.NavigateTo("Jobs");
+    }
+
+}

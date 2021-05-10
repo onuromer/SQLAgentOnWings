@@ -1,0 +1,8 @@
+C:\Users\ooztu\source\repos\github\SQLAgentOnWings\SQLAoW\SQLAoW.Infrastructure\bin\Debug\netstandard2.0\SQLAoW.Infrastructure.deps.json
+C:\Users\ooztu\source\repos\github\SQLAgentOnWings\SQLAoW\SQLAoW.Infrastructure\bin\Debug\netstandard2.0\SQLAoW.Infrastructure.dll
+C:\Users\ooztu\source\repos\github\SQLAgentOnWings\SQLAoW\SQLAoW.Infrastructure\obj\Debug\netstandard2.0\SQLAoW.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\ooztu\source\repos\github\SQLAgentOnWings\SQLAoW\SQLAoW.Infrastructure\obj\Debug\netstandard2.0\SQLAoW.Infrastructure.AssemblyInfo.cs
+C:\Users\ooztu\source\repos\github\SQLAgentOnWings\SQLAoW\SQLAoW.Infrastructure\obj\Debug\netstandard2.0\SQLAoW.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\ooztu\source\repos\github\SQLAgentOnWings\SQLAoW\SQLAoW.Infrastructure\bin\Debug\netstandard2.0\SQLAoW.Infrastructure.pdb
+C:\Users\ooztu\source\repos\github\SQLAgentOnWings\SQLAoW\SQLAoW.Infrastructure\obj\Debug\netstandard2.0\SQLAoW.Infrastructure.dll
+C:\Users\ooztu\source\repos\github\SQLAgentOnWings\SQLAoW\SQLAoW.Infrastructure\obj\Debug\netstandard2.0\SQLAoW.Infrastructure.pdb

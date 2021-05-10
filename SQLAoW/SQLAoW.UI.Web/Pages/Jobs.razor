@@ -1,0 +1,50 @@
+﻿@page "/jobs"
+
+@using SQLAoW.Infrastructure.Services
+@using SQLAoW.Infrastructure.Models
+@inject IQueryService QS
+
+
+<h1>Jobs</h1>
+
+@if (jobs == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Enabled</th>
+                <th>Description</th>
+                <th>DateCreated</th>
+                <th>DateModified</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var job in jobs)
+            {
+                <tr>
+                    <td title="JobId: @job.JobId"><a href="Jobs/@job.JobId">@job.Name</a></td>
+                    <td>
+                        <Switch IsChecked="@job.Enabled" IsReadonly="true"></Switch>
+                    </td>
+                    <td>@job.Description</td>
+                    <td>@job.DateCreated.ToShortDateString()</td>
+                    <td>@job.DateModified.ToShortDateString()</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private IEnumerable<Job> jobs;
+
+    protected override async Task OnInitializedAsync()
+    {
+        jobs = await QS.GetAll<Job>();
+    }
+}

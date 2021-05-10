@@ -1,0 +1,21 @@
+﻿<div class="custom-control custom-switch">
+    @if (IsReadonly)
+    {
+        <input type="checkbox" class="custom-control-input" id="customSwitch1" checked="@IsChecked" disabled>
+    }
+    else
+    {
+        <input type="checkbox" class="custom-control-input" id="customSwitch1" checked="@IsChecked">
+    }
+
+    @if (ShowText)
+    {
+        <label class="custom-control-label" for="customSwitch1">@(IsChecked?"Yes":"No")</label>
+    }
+</div>
+
+@code {
+    [Parameter] public bool IsChecked { get; set; } = false;
+    [Parameter] public bool ShowText { get; set; } = true;
+    [Parameter] public bool IsReadonly { get; set; }
+}
