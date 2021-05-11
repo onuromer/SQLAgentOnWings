@@ -13,29 +13,20 @@ namespace SQLAoW.Infrastructure.Services
 {
     public class QueryService : IQueryService
     {
-        private readonly IConfiguration configuration;
-        public string ConnectionStringName { get; set; } = "Default";
+        public IStorage Storage { get; set; }
 
-        public QueryService(IConfiguration configuration)
+        public QueryService(IStorage storage)
         {
-            this.configuration = configuration;
-            SqlServerBootstrap.Initialize();
-            Converter.ConversionType = ConversionType.Automatic;
+            this.Storage = storage;
         }
 
         public async Task<IEnumerable<T>> GetAll<T>() where T : class
         {
-            using (var connection = new SqlConnection(configuration.GetConnectionString(ConnectionStringName)))
-            {
-                return await connection.QueryAllAsync<T>();
-            }
+            return await Storage.Connection.QueryAllAsync<T>();
         }
         public async Task<IEnumerable<T>> GetOne<T>(Expression<Func<T, bool>> expression) where T : class
         {
-            using (var connection = new SqlConnection(configuration.GetConnectionString(ConnectionStringName)))
-            {
-                return await connection.QueryAsync<T>(expression);
-            }
+            return await Storage.Connection.QueryAsync<T>(expression);
         }
     }
 }

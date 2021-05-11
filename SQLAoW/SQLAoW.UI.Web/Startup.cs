@@ -9,8 +9,9 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using SQLAoW.Infrastructure;
 using SQLAoW.Infrastructure.Services;
-using SQLAoW.UI.Web.Data;
+using SQLAoW.UI.Web.Configurations;
 
 namespace SQLAoW.UI.Web
 {
@@ -29,8 +30,9 @@ namespace SQLAoW.UI.Web
         {
             services.AddRazorPages();
             services.AddServerSideBlazor();
-            services.AddSingleton<WeatherForecastService>();
-            services.AddTransient<IQueryService, QueryService>();
+
+            RazorComponentsConfigurator.ConfigureServices(services, Configuration);
+            ServicesConfigurator.ConfigureServices(services, Configuration);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -57,6 +59,9 @@ namespace SQLAoW.UI.Web
                 endpoints.MapBlazorHub();
                 endpoints.MapFallbackToPage("/_Host");
             });
+
+
+
         }
     }
 }

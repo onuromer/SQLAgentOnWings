@@ -6,3 +6,4 @@ C:\Users\ooztu\source\repos\github\SQLAgentOnWings\SQLAoW\SQLAoW.Infrastructure\
 C:\Users\ooztu\source\repos\github\SQLAgentOnWings\SQLAoW\SQLAoW.Infrastructure\bin\Debug\netstandard2.0\SQLAoW.Infrastructure.pdb
 C:\Users\ooztu\source\repos\github\SQLAgentOnWings\SQLAoW\SQLAoW.Infrastructure\obj\Debug\netstandard2.0\SQLAoW.Infrastructure.dll
 C:\Users\ooztu\source\repos\github\SQLAgentOnWings\SQLAoW\SQLAoW.Infrastructure\obj\Debug\netstandard2.0\SQLAoW.Infrastructure.pdb
+C:\Users\ooztu\source\repos\github\SQLAgentOnWings\SQLAoW\SQLAoW.Infrastructure\obj\Debug\netstandard2.0\SQLAoW.Infrastructure.csprojAssemblyReference.cache

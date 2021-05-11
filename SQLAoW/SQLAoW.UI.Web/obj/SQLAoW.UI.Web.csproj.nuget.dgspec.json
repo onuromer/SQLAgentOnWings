@@ -114,6 +114,16 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "dependencies": {
+            "Blazored.Modal": {
+              "target": "Package",
+              "version": "[6.0.1, )"
+            },
+            "Blazored.Toast": {
+              "target": "Package",
+              "version": "[3.1.2, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

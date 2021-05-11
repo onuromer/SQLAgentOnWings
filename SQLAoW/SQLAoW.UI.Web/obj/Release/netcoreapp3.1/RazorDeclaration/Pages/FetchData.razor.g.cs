@@ -77,6 +77,20 @@ using SQLAoW.UI.Web.Shared;
 #line hidden
 #nullable disable
 #nullable restore
+#line 10 "C:\Users\ooztu\source\repos\github\SQLAgentOnWings\SQLAoW\SQLAoW.UI.Web\_Imports.razor"
+using Blazored.Toast;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 11 "C:\Users\ooztu\source\repos\github\SQLAgentOnWings\SQLAoW\SQLAoW.UI.Web\_Imports.razor"
+using Blazored.Toast.Services;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
 #line 3 "C:\Users\ooztu\source\repos\github\SQLAgentOnWings\SQLAoW\SQLAoW.UI.Web\Pages\FetchData.razor"
 using SQLAoW.UI.Web.Data;
 

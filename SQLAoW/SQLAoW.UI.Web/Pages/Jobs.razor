@@ -3,7 +3,9 @@
 @using SQLAoW.Infrastructure.Services
 @using SQLAoW.Infrastructure.Models
 @inject IQueryService QS
-
+@inject ISQLAgentService SQLAgent
+@inject IJSRuntime JS
+@inject IToastService ToastManager
 
 <h1>Jobs</h1>
 
@@ -21,6 +23,7 @@ else
                 <th>Description</th>
                 <th>DateCreated</th>
                 <th>DateModified</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -34,10 +37,19 @@ else
                     <td>@job.Description</td>
                     <td>@job.DateCreated.ToShortDateString()</td>
                     <td>@job.DateModified.ToShortDateString()</td>
+                    <td>
+                        <button id="btnRun" type="button" class="btn btn-link" @onclick="() => RunJob(job.JobId)">
+                            <i class="oi oi-play-circle" title="Run this Job" aria-hidden="true"></i>
+                        </button>
+                        <button id="test" type="button" class="btn btn-link" @onclick="() => Alert(job.JobId)">Toast!</button>
+
+                    </td>
                 </tr>
             }
         </tbody>
     </table>
+
+
 }
 
 @code {
@@ -46,5 +58,33 @@ else
     protected override async Task OnInitializedAsync()
     {
         jobs = await QS.GetAll<Job>();
+    }
+
+    private async void RunJob(string JobId)
+    {
+
+        var ask = await JS.Confirm("Should we run that?");
+
+        if (ask)
+        {            
+            ToastManager.ShowToast(ToastLevel.Info, "Triggering Job!", "Performing Action");
+            
+            var result = await SQLAgent.RunJob(JobId);
+            
+            if (result)
+            {
+                ToastManager.ShowToast(ToastLevel.Success, "Job successfully triggered", "Action Succeeds!");
+            }
+            else
+            {
+                ToastManager.ShowToast(ToastLevel.Error, "Job is not triggered", "Action Fails!");
+            }
+        }        
+    }
+
+    private void Alert(string msg)
+    {
+        //JS.InvokeVoidAsync("Alert", msg);
+        ToastManager.ShowToast(ToastLevel.Info, "Triggering Job!", "Performing Action");
     }
 }
