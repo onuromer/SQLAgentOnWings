@@ -11,27 +11,17 @@ using System.Threading.Tasks;
 
 namespace SQLAoW.UI.Web.Configurations
 {
-    public static class RazorComponentsConfigurator
+    public static class ComponentsConfigurator
     {
         /// <summary>
         /// Configures the service.
         /// </summary>
         /// <param name="services">The services.</param>
         /// <param name="configuration"></param>
-        public static void ConfigureServices(IServiceCollection services, IConfiguration configuration)
+        public static void ConfigureBlazored(this IServiceCollection services, IConfiguration configuration)
         {
             services.AddBlazoredToast();
             services.AddBlazoredModal();
-        }
-
-        /// <summary>
-        /// Configures the specified application.
-        /// </summary>
-        /// <param name="app">The application.</param>
-        /// <param name="env"></param>
-        public static void Configure(IApplicationBuilder app, IWebHostEnvironment env)
-        {
-
         }
     }
 }

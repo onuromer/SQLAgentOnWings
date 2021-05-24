@@ -4,9 +4,6 @@ namespace SQLAoW.Infrastructure
 {
     public interface IStorage
     {
-        string ConnectionStringName { get; set; }
-        IDbConnection Connection { get; set; }
-
-        void Dispose();
+        IDbConnection CreateConnection();
     }
 }

@@ -1,6 +1,8 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\SQLAoW",
+    "\\SQLAoW\\SQLAoW.Infrastructure\\Services"
   ],
   "PreviewInSolutionExplorer": false
 }

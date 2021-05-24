@@ -2,10 +2,10 @@
 
 namespace SQLAoW.Infrastructure.Services
 {
-    public interface ISQLAgentService
+    public interface _ISQLAgentService
     {
         IStorage Storage { get; set; }
 
-        Task<bool> RunJob(string JobId);
+        Task<bool> StartJob(string JobId);
     }
 }

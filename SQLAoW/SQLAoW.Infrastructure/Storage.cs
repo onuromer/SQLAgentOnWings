@@ -9,24 +9,24 @@ using System.Text;
 
 namespace SQLAoW.Infrastructure
 {
-    public class Storage : IDisposable, IStorage
+    public class Storage : IStorage
     {
         private readonly IConfiguration configuration;
-        public string ConnectionStringName { get; set; } = "Default";
-        public IDbConnection Connection { get; set; }
+        public string ConnectionStringName { get; private set; } = "Default";
+        public string ConnectionString { get; private set; }
 
         public Storage(IConfiguration configuration)
         {
             this.configuration = configuration;
             SqlServerBootstrap.Initialize();
             Converter.ConversionType = ConversionType.Automatic;
-
-            Connection = new SqlConnection(configuration.GetConnectionString(ConnectionStringName));
+            ConnectionString = configuration.GetConnectionString(ConnectionStringName);
         }
 
-        public void Dispose()
+        public IDbConnection CreateConnection()
         {
-            Connection = null;
+            return new SqlConnection(ConnectionString);
         }
+
     }
 }
